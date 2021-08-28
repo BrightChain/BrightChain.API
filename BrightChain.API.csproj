@@ -52,6 +52,7 @@
     </PackageReference>
     <PackageReference Include="OpenCover" Version="4.7.1221" />
     <PackageReference Include="SendGrid" Version="9.24.2" />
+    <PackageReference Include="StarDateCalc" Version="4.0.0" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.354">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
