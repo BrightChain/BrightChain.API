@@ -80,11 +80,27 @@ namespace BrightChain.API
             app.UseAuthentication();
             app.UseAuthorization();
 
+            CancellationToken c = default;
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
                 endpoints.MapBlazorHub();
                 endpoints.MapFallbackToPage("/_Host");
+
+                if (true)
+                {
+                    endpoints.MapGet("/Identity/Account/Register", context => Task.Factory.StartNew(
+                        action: () => context.Response.Redirect("/Identity/Account/Login", false, true),
+                        cancellationToken: c,
+                        creationOptions: TaskCreationOptions.None,
+                        scheduler: TaskScheduler.Default));
+
+                    endpoints.MapPost("/Identity/Account/Register", context => Task.Factory.StartNew(
+                        action: () => context.Response.Redirect("/Identity/Account/Login", false, true),
+                        cancellationToken: c,
+                        creationOptions: TaskCreationOptions.None,
+                        scheduler: TaskScheduler.Default));
+                }
             });
         }
     }

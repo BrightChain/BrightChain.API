@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <UserSecretsId>aspnet-BrightChain.API-56231C01-AE5F-498F-8C2B-0D0AADF06F34</UserSecretsId>
-    <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerfileContext>.</DockerfileContext>
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
     <AnalysisLevel>preview</AnalysisLevel>
@@ -21,6 +21,7 @@
     <Product>BrightChain.API</Product>
     <Company>BrightChain: The Revolution(ary) Network</Company>
     <Authors>BrightChain.API</Authors>
+    <StaticWebAssetsEnabled>true</StaticWebAssetsEnabled>
   </PropertyGroup>
 
   <ItemGroup>
@@ -76,5 +77,11 @@
     <Reference Include="BrightChain.Engine">
       <HintPath>..\BrightChain.Engine\bin\Release\net6.0\BrightChain.Engine.dll</HintPath>
     </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 </Project>
