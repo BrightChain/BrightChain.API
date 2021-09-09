@@ -31,9 +31,13 @@
       "launchBrowser": true,
       "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
       "publishAllPorts": true,
+      "commandLineArgs": "-v brightchain-ssl:/https --privileged -p 80:80 -p 443:443",
       "useSSL": true,
       "environmentVariables": {
-        "ASPNETCORE_HOSTINGSTARTUPASSEMBLIES": "Microsoft.Azure.SignalR"
+        "ASPNETCORE_HOSTINGSTARTUPASSEMBLIES": "Microsoft.Azure.SignalR",
+        "ASPNETCORE_Kestrel__Certificates__Default__Path": "/https/brightchain.pfx",
+        "ASPNETCORE_URLS": "https://+;http://+",
+        "ASPNETCORE_HTTPS_PORT": 443
       }
     },
     "WSL": {
