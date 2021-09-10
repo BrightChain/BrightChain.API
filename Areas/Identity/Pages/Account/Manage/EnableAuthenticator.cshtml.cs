@@ -142,7 +142,7 @@ namespace BrightChain.API.Areas.Identity.Pages.Account.Manage
         {
             return string.Format(
 AuthenticatorUriFormat,
-this._urlEncoder.Encode("BrightChain.API"),
+this._urlEncoder.Encode(Illuminator.Title),
 this._urlEncoder.Encode(email),
 unformattedKey);
         }
