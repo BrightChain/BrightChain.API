@@ -6,8 +6,10 @@
 
 <h1>@Illuminator.Slug</h1>
 
-BrightChain is coming online soon.
-
+@if(!Illuminator.RegistrationEnabled) {
+    <p><b>Registration is currently DISABLED.</b></p>
+}
+<p>BrightChain is coming online soon.</p>
 <p><b style="color: red;">WARNING</b>: BrightChain is presently Pre-ALPHA. Data contents may be reset at any time.</p>
 <p>Although the website is online, much of the registration system is still being written. Check back in a few days!</p>
 
