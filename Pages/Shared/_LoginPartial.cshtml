@@ -1,4 +1,5 @@
 ﻿@using Microsoft.AspNetCore.Identity
+@using BrightChain.API
 @inject SignInManager<BrightChainIdentityUser> SignInManager
 @inject UserManager<BrightChainIdentityUser> UserManager
 
@@ -16,7 +17,7 @@
 }
 else
 {
-    if (false)
+    if (Illuminator.RegistrationEnabled)
     {
     <li class="nav-item">
         <a class="nav-link text-dark" id="register" asp-area="Identity" asp-page="/Account/Register">Register</a>

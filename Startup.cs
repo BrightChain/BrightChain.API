@@ -87,7 +87,7 @@ namespace BrightChain.API
                 endpoints.MapBlazorHub();
                 endpoints.MapFallbackToPage("/_Host");
 
-                if (true)
+                if (!Illuminator.RegistrationEnabled)
                 {
                     endpoints.MapGet("/Identity/Account/Register", context => Task.Factory.StartNew(
                         action: () => context.Response.Redirect("/Identity/Account/Login", false, true),
