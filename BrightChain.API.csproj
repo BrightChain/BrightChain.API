@@ -36,6 +36,7 @@
     <PackageReference Include="Codecov" Version="1.13.0" />
     <PackageReference Include="Codecov.MSBuild" Version="1.13.0" />
     <PackageReference Include="EntCalc" Version="1.0.0" />
+    <PackageReference Include="LettuceEncrypt" Version="1.1.1" />
     <PackageReference Include="MediatR" Version="9.0.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
     <PackageReference Include="Microsoft.ApplicationInsights" Version="2.18.0" />

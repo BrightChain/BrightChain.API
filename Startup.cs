@@ -35,6 +35,7 @@ namespace BrightChain.API
             services.AddDatabaseDeveloperPageExceptionFilter();
             services.AddSingleton<WeatherForecastService>();
             services.AddSingleton<BrightBlockService>();
+            services.AddLettuceEncrypt();
             services.AddMediatR(Assembly.GetExecutingAssembly());
             #region API Versioning
             // Add API Versioning to the Project
