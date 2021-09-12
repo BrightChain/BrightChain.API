@@ -7,7 +7,6 @@ namespace BrightChain.API
     using BrightChain.API.Services;
     using BrightChain.Engine.Services;
     using LettuceEncrypt;
-    using LettuceEncrypt.Accounts;
     using MediatR;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
@@ -41,9 +40,14 @@ namespace BrightChain.API
             services.AddDatabaseDeveloperPageExceptionFilter();
             services.AddSingleton<WeatherForecastService>();
             services.AddSingleton<BrightBlockService>();
-            services.AddLettuceEncrypt();
-            services.AddSingleton<ICertificateSource, LettuceEncryptSource>();
             services.AddMediatR(Assembly.GetExecutingAssembly());
+
+            if (Environment.IsProduction())
+            {
+                services.AddLettuceEncrypt();
+                services.AddSingleton<ICertificateSource, LettuceEncryptSource>();
+            }
+
             #region API Versioning
             // Add API Versioning to the Project
             services.AddApiVersioning(setupAction: config =>
