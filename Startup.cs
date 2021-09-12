@@ -3,8 +3,11 @@ namespace BrightChain.API
     using System.Reflection;
     using BrightChain.API.Data;
     using BrightChain.API.Extensions;
+    using BrightChain.API.Helpers;
     using BrightChain.API.Services;
     using BrightChain.Engine.Services;
+    using LettuceEncrypt;
+    using LettuceEncrypt.Accounts;
     using MediatR;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
@@ -17,12 +20,15 @@ namespace BrightChain.API
     public class Startup
     {
 
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, IWebHostEnvironment env)
         {
-            this.Configuration = configuration;
+            Configuration = configuration;
+            Startup.Environment = env;
         }
 
         public IConfiguration Configuration { get; }
+
+        public static IWebHostEnvironment Environment { get; private set; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
@@ -36,6 +42,7 @@ namespace BrightChain.API
             services.AddSingleton<WeatherForecastService>();
             services.AddSingleton<BrightBlockService>();
             services.AddLettuceEncrypt();
+            services.AddSingleton<ICertificateSource, LettuceEncryptSource>();
             services.AddMediatR(Assembly.GetExecutingAssembly());
             #region API Versioning
             // Add API Versioning to the Project
