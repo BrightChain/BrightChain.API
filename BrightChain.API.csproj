@@ -7,7 +7,7 @@
     <DockerfileContext>.</DockerfileContext>
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
     <AnalysisLevel>preview</AnalysisLevel>
-    <Version>0.0.0.5</Version>
+    <Version>0.0.0.6</Version>
     <Description>Web API front end for The Revolution Network's BrightChain BlockStore</Description>
     <Copyright>(c) 2021 BrightChain/The Revolution Network/Jessica Mulein</Copyright>
     <RootNamespace>BrightChain.API</RootNamespace>
@@ -32,7 +32,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="BrightChain.Engine" Version="0.0.0.4" />
+    <PackageReference Include="BrightChain.Engine" Version="0.0.0.5" />
     <PackageReference Include="Codecov" Version="1.13.0" />
     <PackageReference Include="Codecov.MSBuild" Version="1.13.0" />
     <PackageReference Include="EntCalc" Version="1.0.0" />

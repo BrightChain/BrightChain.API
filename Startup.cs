@@ -19,6 +19,13 @@ namespace BrightChain.API
     public class Startup
     {
 
+        public static readonly Version AssemblyVersion;
+
+        static Startup()
+        {
+            AssemblyVersion = Engine.Helpers.Utilities.GetAssemblyVersionForType(typeof(Illuminator));
+        }
+
         public Startup(IConfiguration configuration, IWebHostEnvironment env)
         {
             this.Configuration = configuration;
