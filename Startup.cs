@@ -21,7 +21,7 @@ namespace BrightChain.API
 
         public Startup(IConfiguration configuration, IWebHostEnvironment env)
         {
-            Configuration = configuration;
+            this.Configuration = configuration;
             Startup.Environment = env;
         }
 

@@ -10,7 +10,10 @@ namespace BrightChain.API.Helpers
 
         public static readonly double Offset = 99055.685D - new StarDate(StarDateConverter.languageCode).TNG(BirthdayDateTime);
 
-        public static double StarDate(DateTime dateTime) => new StarDate(StarDateConverter.languageCode).TNG(dateTime) + Offset;
+        public static double StarDate(DateTime dateTime)
+        {
+            return new StarDate(StarDateConverter.languageCode).TNG(dateTime) + Offset;
+        }
 
         public static double Birthday => StarDate(BirthdayDateTime);
 
