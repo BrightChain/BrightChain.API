@@ -1,4 +1,6 @@
-﻿@inherits LayoutComponentBase
+﻿@using BrightChain.Engine.Services
+@inherits LayoutComponentBase
+@inject BrightBlockService BrightBlockService
 
 <div class="page">
     <div class="sidebar">
@@ -17,7 +19,11 @@
         </div>
     </div>
 </div>
-
+<div style="display: none; visibility: hidden;">
+    <div id="api_ver" value="@Startup.AssemblyVersion.ToString()" />
+    <div id="bc_guid" value="@BrightBlockService.RootBlock.Guid.ToString()" />
+    <div id="bc_ver" value="@BrightBlockService.AssemblyVersion.ToString()" />
+</div>
 <footer class="footer border-top text-muted">
     <div class="container">
         &copy; 2021 - @Illuminator.Slug

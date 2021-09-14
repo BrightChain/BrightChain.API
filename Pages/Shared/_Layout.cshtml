@@ -1,8 +1,10 @@
 ﻿@using BrightChain.API
+@using BrightChain.Engine.Services
 @using Microsoft.AspNetCore.Hosting
 @using Microsoft.AspNetCore.Mvc.ViewEngines
 @inject IWebHostEnvironment Environment
 @inject ICompositeViewEngine Engine
+@inject BrightBlockService BrightBlockService
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,6 +46,11 @@
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
+    </div>
+    <div style="display: none; visibility: hidden;">
+        <div id="api_ver" value="@Startup.AssemblyVersion.ToString()" />
+        <div id="bc_guid" value="@BrightBlockService.RootBlock.Guid.ToString()" />
+        <div id="bc_ver" value="@BrightBlockService.AssemblyVersion.ToString()" />
     </div>
     <footer class="footer border-top text-muted">
         <div class="container">
