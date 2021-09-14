@@ -1,4 +1,5 @@
-﻿using BrightChain.API.Commands;
+﻿using System.Threading.Tasks;
+using BrightChain.API.Commands;
 using BrightChain.API.Queries;
 using BrightChain.Engine.Models.Blocks;
 using BrightChain.Engine.Models.Hashes;

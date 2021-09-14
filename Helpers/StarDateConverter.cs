@@ -1,5 +1,6 @@
 namespace BrightChain.API.Helpers
 {
+    using System;
     using StarDateCalc;
 
     public static class StarDateConverter

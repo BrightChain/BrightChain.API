@@ -1,6 +1,9 @@
 namespace BrightChain.API
 {
+    using System;
     using System.Reflection;
+    using System.Threading;
+    using System.Threading.Tasks;
     using BrightChain.API.Data;
     using BrightChain.API.Extensions;
     using BrightChain.API.Helpers;
@@ -109,13 +112,13 @@ namespace BrightChain.API
                 if (!Illuminator.RegistrationEnabled)
                 {
                     endpoints.MapGet("/Identity/Account/Register", context => Task.Factory.StartNew(
-                        action: () => context.Response.Redirect("/Identity/Account/Login", false, true),
+                        action: () => context.Response.Redirect("/Identity/Account/Login", false),
                         cancellationToken: c,
                         creationOptions: TaskCreationOptions.None,
                         scheduler: TaskScheduler.Default));
 
                     endpoints.MapPost("/Identity/Account/Register", context => Task.Factory.StartNew(
-                        action: () => context.Response.Redirect("/Identity/Account/Login", false, true),
+                        action: () => context.Response.Redirect("/Identity/Account/Login", false),
                         cancellationToken: c,
                         creationOptions: TaskCreationOptions.None,
                         scheduler: TaskScheduler.Default));

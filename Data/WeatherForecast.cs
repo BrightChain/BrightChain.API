@@ -1,3 +1,5 @@
+using System;
+
 namespace BrightChain.API.Data
 {
     public class WeatherForecast
