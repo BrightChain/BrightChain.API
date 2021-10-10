@@ -3,6 +3,7 @@
 @using BrightChain.API;
 @using BrightChain.API.Helpers;
 @inject BrightBlockService BrightBlockService
+@inject NavigationManager MyNavigationManager
 
 <h1>@Illuminator.Slug</h1>
 
@@ -19,6 +20,7 @@
     <div style="float: left; margin-right: 10px;">Database GUID: @BrightBlockService.RootBlock.Guid.ToString()</div>
     <div style="float: left; margin-right: 10px;">API ver: @Startup.AssemblyVersion.ToString()</div>
     <div style="float: left; margin-right: 10px;">Engine ver: @BrightBlockService.AssemblyVersion.ToString()</div>
+    <div style="float: left; margin-right: 10px;">visiting via domain: @(MyNavigationManager.Uri)</div>
 </div>
 <div style="clear: both; margin-top: 15px;">
     <div style="float: left; margin-right: 15px; margin-bottom: 15px;">
